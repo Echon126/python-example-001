@@ -1,6 +1,7 @@
 import sys
-import sys
+
 from PyQt5.QtWidgets import (QWidget, QPushButton, QApplication, QGridLayout, QLCDNumber)
+
 
 class Example(QWidget):
     def __init__(self):
@@ -11,11 +12,11 @@ class Example(QWidget):
         grid = QGridLayout()
         self.setLayout(grid)
 
-        self.setGeometry(300,300,400,300)
+        self.setGeometry(300, 300, 400, 300)
         self.setWindowTitle('学点编程吧-计算器')
 
-        self.lcd =  QLCDNumber()
-        grid.addWidget(self.lcd,0,0,3,0)
+        self.lcd = QLCDNumber()
+        grid.addWidget(self.lcd, 0, 0, 3, 0)
         grid.setSpacing(10)
 
         names = ['Cls', 'Bc', '', 'Close',
@@ -24,7 +25,7 @@ class Example(QWidget):
                  '1', '2', '3', '-',
                  '0', '.', '=', '+']
 
-        positions = [(i,j) for i in range(4,9) for j in range(4,8)]
+        positions = [(i, j) for i in range(4, 9) for j in range(4, 8)]
         for position, name in zip(positions, names):
             if name == '':
                 continue
@@ -41,6 +42,7 @@ class Example(QWidget):
             self.lcd.display('A')
         else:
             self.lcd.display(sender)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
